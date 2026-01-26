@@ -88,77 +88,71 @@ public class Passives implements Listener {
     //For Calling Ability and checks for targeting
 	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onTarget(EntityTargetLivingEntityEvent event) {
-        if (!(event.getTarget() instanceof Player)) {
+        if (event.getTarget() == null || !(event.getTarget() instanceof Player)) {
         	return;
         }
-        if (event.getTarget() instanceof Player) {
-        	Player player = (Player) event.getTarget();
-        	BendingPlayer bPlayer = BendingPlayer.getBendingPlayer(player);
-            if (bPlayer == null) {
-                // Handle case when BendingPlayer is null
-                return;
-            }
-        	boolean darkallianceenabled = Spirits.plugin.getConfig().getBoolean("Abilities.Spirits.DarkSpirit.Passive.DarkAlliance.Enabled");
-        	
-        	if (darkallianceenabled) {
-        		if (bPlayer.hasElement(SpiritElement.DARK)) {
-            		event.setCancelled(true);
-                    event.setTarget(null);
-            	}
-        	}
-        	
-        	if (bPlayer.hasElement(SpiritElement.DARK) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Corruption") && CoreAbility.hasAbility(player, Corruption.class) || event.getTarget().getType() == EntityType.CAVE_SPIDER) 
-        	{
-        		event.setCancelled(true);
-        		// System.out.println("NULL VEX TARGET" + " " + event.getTarget().getName());
-               
-        	}
-        	//Can prbly delete one of these
-        	if (bPlayer.hasElement(SpiritElement.DARK) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Corruption") && event.getEntity().getName().contains("DarkSpirit") && event.getTarget().getName() == player.getName() /*&& event.getTarget().getName() == bPlayer.getName() && bPlayer.getBoundAbility().toString() == "Calling"*/)
-        	{
-        		if (CoreAbility.hasAbility(player, Corruption.class)) {
-            			event.setCancelled(true);
-        		}
-                    //System.out.println("NULL TARGET" + " " + event.getTarget().getName());
-            		//System.out.println("CASTER NAME" + " " + player.getName());
-            		
-            }
-        	if (bPlayer.hasElement(SpiritElement.NEUTRAL) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Calling") && CoreAbility.hasAbility(player, Calling.class) || event.getTarget().getType() == EntityType.VEX) 
-        	{
-        		event.setCancelled(true);
-        		// System.out.println("NULL VEX TARGET" + " " + event.getTarget().getName());
-               
-        	}
-        	
-        	if (bPlayer.hasElement(SpiritElement.NEUTRAL) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Calling") && event.getEntity().getName().contains("Spirit") && event.getTarget().getName() == player.getName() /*&& event.getTarget().getName() == bPlayer.getName() && bPlayer.getBoundAbility().toString() == "Calling"*/)
-        	{
-        		if (CoreAbility.hasAbility(player, Calling.class)) {
-            			event.setCancelled(true);
-        		}
-                    //System.out.println("NULL TARGET" + " " + event.getTarget().getName());
-            		//System.out.println("CASTER NAME" + " " + player.getName());
-            		
-            }
-        		
-            	
-            	if (bPlayer.hasElement(SpiritElement.PRIMAL) && bPlayer.getBoundAbilityName().equalsIgnoreCase("CallingRift") && CoreAbility.hasAbility(player, CallingRift.class) || event.getTarget().getType() == EntityType.VEX) 
-            	{
-            		event.setCancelled(true);
-            		// System.out.println("NULL VEX TARGET" + " " + event.getTarget().getName());
-                   
-            	}
-            	if (bPlayer.hasElement(SpiritElement.PRIMAL) && bPlayer.getBoundAbilityName().equalsIgnoreCase("CallingRift") && event.getEntity().getName().contains("Spirit") && event.getTarget().getName() == player.getName() /*&& event.getTarget().getName() == bPlayer.getName() && bPlayer.getBoundAbility().toString() == "Calling"*/)
-            	{
-                		
-                	if (CoreAbility.hasAbility(player, CallingRift.class)) {
-                		event.setCancelled(true);
-                	}
-                        //System.out.println("NULL TARGET" + " " + event.getTarget().getName());
-                		//System.out.println("CASTER NAME" + " " + player.getName());
-                		
-                	}
-        		
-        	}
+        
+        Player player = (Player) event.getTarget();
+        BendingPlayer bPlayer = BendingPlayer.getBendingPlayer(player);
+        if (bPlayer == null) {
+            return;
         }
+        
+    	boolean darkallianceenabled = Spirits.plugin.getConfig().getBoolean("Abilities.Spirits.DarkSpirit.Passive.DarkAlliance.Enabled");
+    	
+    	if (darkallianceenabled) {
+    		if (bPlayer.hasElement(SpiritElement.DARK)) {
+        		event.setCancelled(true);
+                event.setTarget(null);
+        	}
+    	}
+    	
+    	if (bPlayer.hasElement(SpiritElement.DARK) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Corruption") && CoreAbility.hasAbility(player, Corruption.class)) 
+    	{
+    		event.setCancelled(true);
+    	}
+    	
+    	// Check for CAVE_SPIDER entity type separately
+    	if (event.getEntity() != null && event.getEntity().getType() == EntityType.CAVE_SPIDER) {
+    		event.setCancelled(true);
+    	}
+    	
+    	//Can prbly delete one of these
+    	if (bPlayer.hasElement(SpiritElement.DARK) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Corruption") && event.getEntity().getName().contains("DarkSpirit") && event.getTarget().getName() == player.getName())
+    	{
+    		if (CoreAbility.hasAbility(player, Corruption.class)) {
+        			event.setCancelled(true);
+    		}
+        }
+    	if (bPlayer.hasElement(SpiritElement.NEUTRAL) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Calling") && CoreAbility.hasAbility(player, Calling.class)) 
+    	{
+    		event.setCancelled(true);
+    	}
+    	
+    	// Check for VEX entity type separately
+    	if (event.getEntity() != null && event.getEntity().getType() == EntityType.VEX) {
+    		event.setCancelled(true);
+    	}
+    	
+    	if (bPlayer.hasElement(SpiritElement.NEUTRAL) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Calling") && event.getEntity().getName().contains("Spirit") && event.getTarget().getName() == player.getName())
+    	{
+    		if (CoreAbility.hasAbility(player, Calling.class)) {
+        			event.setCancelled(true);
+    		}
+        }
+    		
+        	
+        	if (bPlayer.hasElement(SpiritElement.PRIMAL) && bPlayer.getBoundAbilityName().equalsIgnoreCase("CallingRift") && CoreAbility.hasAbility(player, CallingRift.class)) 
+        	{
+        		event.setCancelled(true);
+        	}
+        	
+        	if (bPlayer.hasElement(SpiritElement.PRIMAL) && bPlayer.getBoundAbilityName().equalsIgnoreCase("CallingRift") && event.getEntity().getName().contains("Spirit") && event.getTarget().getName() == player.getName())
+        	{
+            		
+            	if (CoreAbility.hasAbility(player, CallingRift.class)) {
+            		event.setCancelled(true);
+            	}
+            }
     }
-	
+}
