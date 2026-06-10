@@ -47,6 +47,9 @@ public class Pandemonium extends DarkAbility implements ComboAbility {
 
 	public Pandemonium(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 
 		if (!bPlayer.canBendIgnoreBinds(this)) {
 			return;

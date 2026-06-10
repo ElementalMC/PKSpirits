@@ -55,6 +55,9 @@ public class CallingRift extends PrimalAbility {
 	
 	public CallingRift(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		time = System.currentTimeMillis();
 		if (!this.bPlayer.canBend(this)) {
 			return;

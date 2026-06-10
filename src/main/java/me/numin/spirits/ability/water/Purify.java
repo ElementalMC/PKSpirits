@@ -56,6 +56,9 @@ public class Purify extends WaterAbility {
 
     public Purify(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) {
             return;

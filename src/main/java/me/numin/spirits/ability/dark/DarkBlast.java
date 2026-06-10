@@ -50,6 +50,9 @@ public class DarkBlast extends DarkAbility {
 
     public DarkBlast(Player player, DarkBlastType type) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) return;
 

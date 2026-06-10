@@ -62,6 +62,9 @@ public class Sanctuary extends LightAbility implements ComboAbility {
 
 	public Sanctuary(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 
 		if (!bPlayer.canBendIgnoreBinds(this)) {
 			return;

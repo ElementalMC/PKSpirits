@@ -38,6 +38,9 @@ public class SinisterAura extends DarkAbility implements PassiveAbility {
 
 	public SinisterAura(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		
 		if (!bPlayer.hasElement(SpiritElement.DARK)) {
 			return;

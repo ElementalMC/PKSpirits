@@ -32,6 +32,9 @@ public class Safeguard extends LightAbility {
 
 	public Safeguard(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		
 		if (!bPlayer.canBend(this)) {
 			return;

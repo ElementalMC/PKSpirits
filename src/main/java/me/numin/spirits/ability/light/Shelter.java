@@ -61,6 +61,9 @@ public class Shelter extends LightAbility {
 
     public Shelter(Player player, ShelterType shelterType) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) {
             return;

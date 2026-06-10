@@ -26,6 +26,9 @@ public class DarkSoar extends DarkAbility {
 
     public DarkSoar(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this) || CoreAbility.hasAbility(player, Levitation.class)) {
             return;
