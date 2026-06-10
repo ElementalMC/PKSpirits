@@ -106,6 +106,11 @@ public class Passives implements Listener {
                     event.setTarget(null);
             	}
         	}
+        	// DarkAlliance above can clear the event target; stop here before the
+        	// checks below dereference event.getTarget() (fixes NPE on null target).
+        	if (event.getTarget() == null) {
+        		return;
+        	}
         	
         	if (bPlayer.hasElement(SpiritElement.DARK) && bPlayer.getBoundAbilityName().equalsIgnoreCase("Corruption") && CoreAbility.hasAbility(player, Corruption.class) || event.getTarget().getType() == EntityType.CAVE_SPIDER) 
         	{
