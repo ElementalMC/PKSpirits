@@ -12,7 +12,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import com.projectkorra.projectkorra.ProjectKorra;
-import com.projectkorra.projectkorra.util.ParticleEffect;
+import me.numin.spirits.utilities.ParticleEffect;
 
 import me.numin.spirits.SpiritElement;
 import me.numin.spirits.Spirits;

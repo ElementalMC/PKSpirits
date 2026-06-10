@@ -9,7 +9,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import com.projectkorra.projectkorra.ability.PassiveAbility;
 import com.projectkorra.projectkorra.configuration.ConfigManager;
-import com.projectkorra.projectkorra.util.ParticleEffect;
+import me.numin.spirits.utilities.ParticleEffect;
 
 import me.numin.spirits.SpiritElement;
 import me.numin.spirits.Spirits;

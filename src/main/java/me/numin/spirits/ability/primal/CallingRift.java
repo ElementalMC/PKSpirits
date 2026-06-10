@@ -21,7 +21,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ProjectKorra;
 import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.command.Commands;
-import com.projectkorra.projectkorra.util.ParticleEffect;
+import me.numin.spirits.utilities.ParticleEffect;
 
 import me.numin.spirits.Spirits;
 import me.numin.spirits.ability.api.PrimalAbility;

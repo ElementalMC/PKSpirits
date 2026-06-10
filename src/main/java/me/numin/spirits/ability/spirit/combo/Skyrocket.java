@@ -23,7 +23,7 @@ import com.projectkorra.projectkorra.ability.util.ComboManager.AbilityInformatio
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.util.ClickType;
 import com.projectkorra.projectkorra.util.DamageHandler;
-import com.projectkorra.projectkorra.util.ParticleEffect;
+import me.numin.spirits.utilities.ParticleEffect;
 import com.projectkorra.projectkorra.util.TempBlock;
 
 import me.numin.spirits.Spirits;

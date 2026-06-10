@@ -8,7 +8,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import com.projectkorra.projectkorra.Element;
-import com.projectkorra.projectkorra.util.ParticleEffect;
+import me.numin.spirits.utilities.ParticleEffect;
 
 import me.numin.spirits.SpiritElement;
 import me.numin.spirits.Spirits;

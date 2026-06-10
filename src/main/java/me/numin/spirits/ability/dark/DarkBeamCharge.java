@@ -6,7 +6,7 @@ import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import com.projectkorra.projectkorra.util.ParticleEffect;
+import me.numin.spirits.utilities.ParticleEffect;
 
 import me.numin.spirits.Spirits;
 import me.numin.spirits.ability.api.DarkAbility;

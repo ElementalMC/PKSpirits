@@ -14,7 +14,7 @@
     <description>Enables your players to be Spirits.</description>
     <properties>
         <java.version>21</java.version>
-        <projectkorra.version>1.11.2</projectkorra.version>
+        <projectkorra.version>1.13.0</projectkorra.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -76,13 +76,13 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.21.11-R0.1-SNAPSHOT</version>
+            <version>1.21.11-R0.2-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.projectkorra</groupId>
             <artifactId>projectkorra</artifactId>
-            <version>1.12.0</version>
+            <version>1.13.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
