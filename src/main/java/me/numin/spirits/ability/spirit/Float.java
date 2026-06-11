@@ -28,6 +28,9 @@ public class Float extends SpiritAbility {
 
 	public Float(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		
 		if (bPlayer.isOnCooldown(this)) {
 			return;

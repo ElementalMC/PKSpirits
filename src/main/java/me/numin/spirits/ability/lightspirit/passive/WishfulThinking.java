@@ -27,6 +27,9 @@ public class WishfulThinking extends LightAbility implements PassiveAbility {
 
 	public WishfulThinking(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		
 		if (!bPlayer.hasElement(SpiritElement.LIGHT)) {
 			return;

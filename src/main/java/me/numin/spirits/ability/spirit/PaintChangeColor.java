@@ -32,6 +32,9 @@ public class PaintChangeColor extends SpiritAbility {
 	
     public PaintChangeColor(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
         if (COLORS.isEmpty()) defineColors();
         setFields();
         time = System.currentTimeMillis();

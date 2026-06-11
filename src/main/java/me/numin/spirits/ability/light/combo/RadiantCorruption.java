@@ -53,6 +53,9 @@ public class RadiantCorruption extends LightAbility implements ComboAbility {
     
     public RadiantCorruption(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBendIgnoreBinds(this)) {
             return;

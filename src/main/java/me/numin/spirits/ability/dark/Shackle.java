@@ -41,6 +41,9 @@ public class Shackle extends DarkAbility {
 
     public Shackle(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) {
             return;

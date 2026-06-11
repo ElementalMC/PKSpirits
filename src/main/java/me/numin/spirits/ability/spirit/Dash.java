@@ -29,6 +29,9 @@ public class Dash extends SpiritAbility {
 
     public Dash(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this) || CoreAbility.hasAbility(player, Levitation.class)) {
             return;

@@ -72,6 +72,9 @@ public class Corruption extends DarkAbility {
 
 	public Corruption(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 				
 		if (bPlayer.isOnCooldown(this)) {
 			return;

@@ -33,6 +33,9 @@ public class Paint extends SpiritAbility {
 	
     public Paint(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
         setFields();
         time = System.currentTimeMillis();
         initialEyeLocation = player.getEyeLocation();

@@ -58,6 +58,9 @@ public class Calling extends SpiritAbility {
 	
 	public Calling(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		time = System.currentTimeMillis();
 		if (!this.bPlayer.canBend(this)) {
 			return;
@@ -249,19 +252,16 @@ public class Calling extends SpiritAbility {
 
 	@Override
 	public boolean isExplosiveAbility() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isIgniteAbility() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public String getAbilityType() {
-		// TODO Auto-generated method stub
 		return OFFENSE;
 	}
 }

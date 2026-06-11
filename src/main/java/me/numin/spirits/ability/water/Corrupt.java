@@ -75,6 +75,9 @@ public class Corrupt extends WaterAbility {
 
     public Corrupt(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) {
             System.out.println("Fail");

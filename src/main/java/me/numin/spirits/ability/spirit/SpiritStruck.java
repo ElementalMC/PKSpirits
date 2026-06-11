@@ -33,6 +33,9 @@ public class SpiritStruck extends SpiritAbility {
 
 	public SpiritStruck(final Player sourceplayer, final Entity targetentity) {
 		super(sourceplayer);
+		if (bPlayer == null) {
+			return;
+		}
 		if (!this.bPlayer.canBend(this)) {
 			return;
 		}
@@ -150,19 +153,16 @@ public class SpiritStruck extends SpiritAbility {
 
 	@Override
 	public boolean isExplosiveAbility() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isIgniteAbility() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public String getAbilityType() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
