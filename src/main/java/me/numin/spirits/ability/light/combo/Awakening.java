@@ -75,6 +75,9 @@ public class Awakening extends LightAbility implements ComboAbility {
 
 	public Awakening(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 
 		if (!bPlayer.canBendIgnoreBinds(this)) {
 			return;

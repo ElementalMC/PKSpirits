@@ -39,6 +39,9 @@ public class Alleviate extends LightAbility {
 
     public Alleviate(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) {
             return;

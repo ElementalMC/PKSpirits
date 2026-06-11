@@ -33,6 +33,9 @@ public class Exchange extends SpiritAbility {
 
     public Exchange(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
         setFields();
         time = System.currentTimeMillis();
         initialEyeLocation = player.getEyeLocation();

@@ -37,6 +37,9 @@ public class Afterglow extends LightAbility implements PassiveAbility {
 
 	public Afterglow(Player player, Location location) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		
 		if (!bPlayer.hasElement(SpiritElement.LIGHT)) {
 			return;

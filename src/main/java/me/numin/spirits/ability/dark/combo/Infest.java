@@ -59,6 +59,9 @@ public class Infest extends DarkAbility implements ComboAbility {
     
     public Infest(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBendIgnoreBinds(this)) {
             return;

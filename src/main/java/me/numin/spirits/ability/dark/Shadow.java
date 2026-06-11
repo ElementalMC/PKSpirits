@@ -42,6 +42,9 @@ public class Shadow extends DarkAbility {
 	
 	public Shadow(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		
 		if (!bPlayer.canBend(this)) {
 			return;

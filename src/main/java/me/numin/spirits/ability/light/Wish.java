@@ -42,6 +42,9 @@ public class Wish extends LightAbility {
 	
 	public Wish(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 
 		if (bPlayer.isOnCooldown(this)) {
 			return;

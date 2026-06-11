@@ -35,6 +35,9 @@ public class LuminousCorruption extends LightAbility {
     
 	public LuminousCorruption(final Player sourceplayer, final Entity targetentity) {
 		super(sourceplayer);
+		if (bPlayer == null) {
+			return;
+		}
 		if (!this.bPlayer.canBend(this)) {
 			return;
 		}

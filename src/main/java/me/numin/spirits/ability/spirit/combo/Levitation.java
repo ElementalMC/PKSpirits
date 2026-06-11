@@ -46,6 +46,9 @@ public class Levitation extends SpiritAbility implements ComboAbility {
 
     public Levitation(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBendIgnoreBinds(this) || CoreAbility.hasAbility(player, Levitation.class)) return;
 

@@ -58,6 +58,9 @@ public class Calling extends SpiritAbility {
 	
 	public Calling(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		time = System.currentTimeMillis();
 		if (!this.bPlayer.canBend(this)) {
 			return;

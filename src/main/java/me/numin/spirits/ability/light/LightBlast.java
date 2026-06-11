@@ -51,6 +51,9 @@ public class LightBlast extends LightAbility {
 
     public LightBlast(Player player, LightBlastType type) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) return;
 

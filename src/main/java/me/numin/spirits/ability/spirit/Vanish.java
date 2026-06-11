@@ -39,6 +39,9 @@ public class Vanish extends SpiritAbility {
 
     public Vanish(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this) || CoreAbility.hasAbility(player, Levitation.class)) {
             return;

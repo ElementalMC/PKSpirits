@@ -65,6 +65,9 @@ public class Enlightenment extends LightAbility {
 
 	public Enlightenment(Player player) {
 		super(player);
+		if (bPlayer == null) {
+			return;
+		}
 		
 		if (!bPlayer.canBend(this)) {
 			return;

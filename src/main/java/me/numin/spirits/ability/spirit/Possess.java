@@ -91,6 +91,9 @@ public class Possess extends SpiritAbility {
 
     public Possess(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) {
             return;

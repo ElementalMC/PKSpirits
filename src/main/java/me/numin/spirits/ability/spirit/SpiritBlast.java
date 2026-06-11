@@ -56,6 +56,9 @@ public class SpiritBlast extends SpiritAbility {
 
     public SpiritBlast(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) { //If the cooldown is already active
             return;

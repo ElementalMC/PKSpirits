@@ -48,6 +48,9 @@ public class LightShot extends LightAbility {
 	
     public LightShot(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this)) {
             return;

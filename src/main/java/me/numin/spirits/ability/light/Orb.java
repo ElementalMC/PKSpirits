@@ -46,6 +46,9 @@ public class Orb extends LightAbility {
 
     public Orb(Player player) {
         super(player);
+        if (bPlayer == null) {
+        	return;
+        }
 
         if (!bPlayer.canBend(this))
             return;
