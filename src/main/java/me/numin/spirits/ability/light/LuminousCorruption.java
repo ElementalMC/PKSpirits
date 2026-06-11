@@ -38,9 +38,6 @@ public class LuminousCorruption extends LightAbility {
 		if (bPlayer == null) {
 			return;
 		}
-		if (bPlayer == null) {
-			return;
-		}
 		if (!this.bPlayer.canBend(this)) {
 			return;
 		}

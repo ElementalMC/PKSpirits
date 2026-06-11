@@ -36,9 +36,6 @@ public class SpiritStruck extends SpiritAbility {
 		if (bPlayer == null) {
 			return;
 		}
-		if (bPlayer == null) {
-			return;
-		}
 		if (!this.bPlayer.canBend(this)) {
 			return;
 		}
