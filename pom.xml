@@ -13,7 +13,7 @@
 
     <description>Enables your players to be Spirits.</description>
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <projectkorra.version>1.13.0</projectkorra.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -59,8 +59,8 @@
 
     <repositories>
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
             <id>placeholderapi</id>
@@ -74,9 +74,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.21.11-R0.2-SNAPSHOT</version>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>26.2.build.133-stable</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
